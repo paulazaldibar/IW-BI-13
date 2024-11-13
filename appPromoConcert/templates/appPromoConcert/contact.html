@@ -42,7 +42,7 @@
                         <div class="row align-items-center">
                             <div class="col-xl-3 col-lg-2">
                                 <div class="logo">
-                                    <a href="{ % url 'index' %}">
+                                    <a href="{% url 'index' %}">
                                         <img src="{% static 'img/logo.png' %}" alt="">
                                     </a>
                                 </div>
@@ -52,20 +52,20 @@
                                     <nav>
                                         <ul id="navigation">
                                             <li><a class="active" href="index">home</a></li>
-                                            <li><a href="{ % url 'about' %}">About</a></li>
-                                            <li><a href="{ % url 'track' %}">tracks</a></li>
+                                            <li><a href="{% url 'about' %}">About</a></li>
+                                            <li><a href="{% url 'track' %}">tracks</a></li>
                                             <li><a href="#">blog <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                    <li><a href="{ % url 'blog' %}">blog</a></li>
-                                                    <li><a href="{ % url 'single_blog' %}">single-blog</a></li>
+                                                    <li><a href="{% url 'blog' %}">blog</a></li>
+                                                    <li><a href="{% url 'single_blog' %}">single-blog</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                     <li><a href="{ % url 'elements' %}">elements</a></li>
+                                                     <li><a href="{% url 'elements' %}">elements</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="{ % url 'contact' %}">Contact</a></li>
+                                            <li><a href="{% url 'contact' %}">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>

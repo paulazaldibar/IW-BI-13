@@ -55,21 +55,21 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a class="active" href="{ % url 'index' %}">home</a></li>
-                                            <li><a href="{ % url 'about' %}">About</a></li>
-                                            <li><a href="{ % url 'track' %}">tracks</a></li>
+                                            <li><a class="active" href="{% url 'index' %}">home</a></li>
+                                            <li><a href="{% url 'about' %}">About</a></li>
+                                            <li><a href="{% url 'track' %}">tracks</a></li>
                                             <li><a href="#">blog <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                    <li><a href="{ % url 'blog' %}">blog</a></li>
-                                                    <li><a href="{ % url 'single_blog' %}">single-blog</a></li>
+                                                    <li><a href="{% url 'blog' %}">blog</a></li>
+                                                    <li><a href="{% url 'single_blog' %}">single-blog</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                     <li><a href="{ % url 'elements' %}">elements</a></li>
+                                                     <li><a href="{% url 'elements' %}">elements</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="{ % url 'contact' %}">Contact</a></li>
+                                            <li><a href="{% url 'contact' %}">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -229,7 +229,7 @@
                 <div class="col-xl-12">
                     <div class="text text-center">
                         <h3>Contact For RSVP</h3>
-                        <a class="boxed-btn3" href="{ % url 'contact' %}">Contact Me</a>
+                        <a class="boxed-btn3" href="{% url 'contact' %}">Contact Me</a>
                     </div>
                 </div>
             </div>

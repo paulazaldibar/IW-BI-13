@@ -41,7 +41,7 @@
                       <div class="row align-items-center">
                           <div class="col-xl-3 col-lg-2">
                               <div class="logo">
-                                  <a href="{ % url 'index' %}">
+                                  <a href="{% url 'index' %}">
                                       <img src="{% static 'img/logo.png' %}"  alt="">
                                   </a>
                               </div>
@@ -50,21 +50,21 @@
                               <div class="main-menu  d-none d-lg-block">
                                   <nav>
                                       <ul id="navigation">
-                                          <li><a class="active" href="{ % url 'index' %}">home</a></li>
-                                          <li><a href="{ % url 'about' %}">About</a></li>
-                                          <li><a href="{ % url 'track' %}">tracks</a></li>
+                                          <li><a class="active" href="{% url 'index' %}">home</a></li>
+                                          <li><a href="{% url 'about' %}">About</a></li>
+                                          <li><a href="{% url 'track' %}">tracks</a></li>
                                           <li><a href="#">blog <i class="ti-angle-down"></i></a>
                                               <ul class="submenu">
-                                                  <li><a href="{ % url 'blog' %}">blog</a></li>
-                                                  <li><a href="{ % url 'single_blog' %}">single-blog</a></li>
+                                                  <li><a href="{% url 'blog' %}">blog</a></li>
+                                                  <li><a href="{% url 'single_blog' %}">single-blog</a></li>
                                               </ul>
                                           </li>
                                           <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                               <ul class="submenu">
-                                                   <li><a href="{ % url 'elements' %}">elements</a></li>
+                                                   <li><a href="{% url 'elements' %}">elements</a></li>
                                               </ul>
                                           </li>
-                                          <li><a href="{ % url 'contact' %}">Contact</a></li>
+                                          <li><a href="{% url 'contact' %}">Contact</a></li>
                                       </ul>
                                   </nav>
                               </div>
@@ -398,7 +398,7 @@
                      <div class="media post_item">
                         <img src="{% static 'img/post/post_1.png' %}" alt="post">
                         <div class="media-body">
-                           <a href="{ % url 'single_blog' %}">
+                           <a href="{% url 'single_blog' %}">
                               <h3>From life was you fish...</h3>
                            </a>
                            <p>January 12, 2019</p>
@@ -407,7 +407,7 @@
                      <div class="media post_item">
                         <img src="{% static 'img/post/post_2.png' %}" alt="post">
                         <div class="media-body">
-                           <a href="{ % url 'single_blog' %}">
+                           <a href="{% url 'single_blog' %}">
                               <h3>The Amazing Hubble</h3>
                            </a>
                            <p>02 Hours ago</p>
@@ -416,7 +416,7 @@
                      <div class="media post_item">
                         <img src="{% static 'img/post/post_3.png' %}" alt="post">
                         <div class="media-body">
-                           <a href="{ % url 'single_blog' %}">
+                           <a href="{% url 'single_blog' %}">
                               <h3>Astronomy Or Astrology</h3>
                            </a>
                            <p>03 Hours ago</p>
@@ -425,7 +425,7 @@
                      <div class="media post_item">
                         <img src="{% static 'img/post/post_4.png' %}" alt="post">
                         <div class="media-body">
-                           <a href="{ % url 'single_blog' %}">
+                           <a href="{% url 'single_blog' %}">
                               <h3>Asteroids telescope</h3>
                            </a>
                            <p>01 Hours ago</p>
