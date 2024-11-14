@@ -130,8 +130,7 @@
     font-family: 'themify';
     color: #ddd; }
 
-    .nice-select.open:after {
- }
+
     .nice-select.open .list {
       opacity: 1;
       pointer-events: auto;
