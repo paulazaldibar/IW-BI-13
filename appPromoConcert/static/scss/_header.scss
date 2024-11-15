@@ -17,13 +17,7 @@
         padding: 18px 0;
         background: #fff;
         background: transparent;
-        // &.details_nav_bg{
-        //     background: #727272;
-        //     padding-bottom: 0;
-        //     @media #{$mobile_device} {
-        //         padding-bottom: 10px;
-        //     }
-        // }
+
         padding: 30px 150px;
         @media #{$mobile_device} {
             padding: 10px 0px;
@@ -188,18 +182,7 @@
                                 display: none !important;;
                             }
                         }
-                        // &::before {
-                        //     position: absolute;
-                        //     content: "";
-                        //     background: #fff;
-                        //     width: 100%;
-                        //     height: 2px;
-                        //     bottom: 0;
-                        //     left: 0;
-                        //     opacity: 0;
-                        //     transform: scaleX(0);
-                        //     @include transition(.3s);
-                        // }
+                   
                         &:hover::before{
                             opacity: 1;
                             transform: scaleX(1);
@@ -299,65 +282,4 @@
         }
         
     }
-    // .header-top_area{
-    //     padding: 12px 0;
-    //     background: rgba(44, 44, 44, 0.50);
-    //   .social_media_links{
-    //       @media #{$mobile_device} {
-    //           text-align: center;
-    //       }
-    //       a{
-    //         font-size: 15px;
-    //         color: #fff;
-    //         margin-right: 12px;
-    //         &:hover{
-    //             color: #ED1B1B;
-    //         }
-    //       }
-    //   }  
-    //   .short_contact_list{
-    //       text-align: right;
-    //       @media #{$mobile_device} {
-    //         text-align: center;
-    //     }
-    //       ul{
-    //           li{
-    //               display: inline-block;
-    //               a{
-    //                 font-size: 13px;
-    //                 color: #fff;
-    //                 margin-left: 50px; 
-    //                 @media #{$mobile_device} 
-    //                 {
-    //                     margin-left: 0;
-    //                     margin: 0 5px;
-    //                 }
-    //                 i{
-    //                     color: #ED1B1B;
-    //                     margin-right: 7px;
-    //                 }
-    //               }
-    //           }
-    //       }
-    //   }
-    // }
 }
-// .header_bottom_border {
-// 	border-bottom: 1px solid #4B4E50;
-//     padding-bottom: 22px;
-//     &.white_border{
-//         border-bottom: 1px solid rgba(255,255,255,.2) !important;
-//         @media #{$mobile_device}{
-//             padding: 0;
-//             border-bottom: none;;
-//         }
-//         @media #{$mobile_device}{
-//             padding: 0;
-//             border-bottom: none !important ;;
-//         }
-//     }
-//     @media #{$mobile_device}{
-//         padding: 0;
-//         border-bottom: none;;
-//     }
-// }

@@ -892,14 +892,24 @@ h3 {
   }
 }
 
+img[src="{% static 'img/logo.png' %}"] {
+  height: 100px !important;
+  width: 100px !important;
+}
+
+
 /* line 40, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
 .header-area .main-header-area .logo-img {
+  height: 50px;
+  width: 50px;
   text-align: center;
 }
 
 @media (max-width: 767px) {
   /* line 40, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
   .header-area .main-header-area .logo-img {
+    height: 40px;
+    width: 40px;
     text-align: left;
   }
 }
@@ -907,6 +917,8 @@ h3 {
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 40, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
   .header-area .main-header-area .logo-img {
+    height: 45px;
+    width: 45px;
     text-align: left;
   }
 }
@@ -914,6 +926,8 @@ h3 {
 @media (min-width: 992px) and (max-width: 1200px) {
   /* line 40, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
   .header-area .main-header-area .logo-img {
+    height: 50px;
+    width: 50px;
     text-align: left;
   }
 }
@@ -921,6 +935,7 @@ h3 {
 @media (max-width: 767px) {
   /* line 54, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
   .header-area .main-header-area .logo-img img {
+    height: 50px;
     width: 70px;
   }
 }
@@ -928,6 +943,7 @@ h3 {
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 54, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
   .header-area .main-header-area .logo-img img {
+    height: 50px !important;
     width: 70px;
   }
 }
@@ -987,6 +1003,8 @@ h3 {
   /* line 92, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
   .header-area .main-header-area .Appointment .search_button {
     margin-right: 15px;
+    height: 55px;
+    width: 55px;
   }
 }
 
@@ -7315,4 +7333,7 @@ h6 {
   font-size: 12px;
 }
 
-/*# sourceMappingURL=style.css.map */
+.logo_nav{
+  width: 100px;
+  height: 100px;
+}

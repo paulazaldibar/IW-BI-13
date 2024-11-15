@@ -111,11 +111,16 @@ section p {
     padding-bottom: 30px;
     padding-left: 30px;
     padding-top: 70px;
+    max-width: 50px;
+    max-height: 50px;
+
 }
 .logo h1{
     color: #fff;
     font-weight: 700;
     text-transform: uppercase;
+    max-width: 50px;
+    max-height: 50px;
 }
 .left-nav ul {
     margin: 0;
