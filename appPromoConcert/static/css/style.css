@@ -125,6 +125,11 @@ label {
   text-shadow: none;
 }
 
+.back_to_top a{
+  color: white;
+
+}
+
 /* line 81, ../../Arafath/CL/Cl November/221. Music/HTML/scss/theme-default.scss */
 ::-moz-selection {
   background: #444;
