@@ -33,11 +33,6 @@
 </head>
 
 <body>
-    <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-
-    <!-- header-start -->
     <header>
         <div class="header-area ">
             <div id="sticky-header" class="main-header-area">
@@ -47,7 +42,7 @@
                             <div class="col-xl-3 col-lg-2">
                                 <div class="logo">
                                     <a href="{% url 'index' %}">
-                                        <img src="{% static 'img/logo.png' %}" alt="">
+                                        <img src="{% static 'img/logo.png' %}" alt="" class="logo_nav">
                                     </a>
                                 </div>
                             </div>
@@ -55,21 +50,10 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a class="active" href="{% url 'index' %}">home</a></li>
-                                            <li><a href="{% url 'about' %}">About</a></li>
-                                            <li><a href="{% url 'track' %}">tracks</a></li>
-                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="{% url 'blog' %}">blog</a></li>
-                                                    <li><a href="{% url 'single-blog' %}">single-blog</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                     <li><a href="{% url 'elements' %}">elements</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                                            <li><a class="active" href="{% url 'index' %}">Home</a></li>
+                                            <li><a href="{% url 'about' %}">Promotores Musicales</a></li>
+                                            <li><a href="{% url 'track' %}">Festivales</a></li>
+                                            <li><a href="{% url 'contact' %}">Intérpretes</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -77,9 +61,9 @@
                             <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                                 <div class="social_icon text-right">
                                     <ul>
-                                        <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
-                                        <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
-                                        <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
+                                        <li><a href="https://www.facebook.com/PromoConcert"> <i class="fa fa-facebook"></i> </a></li>
+                                        <li><a href="https://www.twitter.com/PromoConcert"> <i class="fa fa-twitter"></i> </a></li>
+                                        <li><a href="https://www.instagram.com/PromoConcert"> <i class="fa fa-instagram"></i> </a></li>
                                     </ul>
                                 </div>
                             </div>
