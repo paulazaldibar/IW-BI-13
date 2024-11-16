@@ -1971,6 +1971,7 @@ img[src="{% static 'img/logo.png' %}"] {
   /* line 151, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_music_area.scss */
   .music_area .music_field {
     margin-bottom: 30px;
+    
   }
 }
 
@@ -1980,6 +1981,7 @@ img[src="{% static 'img/logo.png' %}"] {
   float: left;
   margin-right: 50px;
 }
+
 
 /* line 160, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_music_area.scss */
 .music_area .music_field .audio_name {
@@ -7338,7 +7340,31 @@ h6 {
   font-size: 12px;
 }
 
+/* ESTILOS ESPECIFICOS A ELEMENTOS*/
+
 .logo_nav{
   width: 100px;
   height: 100px;
 }
+
+.imagen_index .festival-image .promotor-image{
+  width: 100% !important;
+  max-width: 500px !important;
+  height: auto;
+  object-fit: cover; /* Hace que la imagen cubra el contenedor sin distorsionar */
+}
+
+
+.slider_festival{
+  background-image: url(../img/banner/festival.png);
+}
+
+.slider_promotor{
+  background-image: url(../img/banner/promotor.png);
+}
+
+.slider_interprete{
+  background-image: url(../img/banner/interprete.png);
+}
+
+

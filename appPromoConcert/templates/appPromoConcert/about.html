@@ -1,80 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
 {% load static %}
-<!doctype html>
-<html class="no-js" lang="zxx">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>PromoConcert</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
-
-    <!-- CSS here -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
-    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
-    <link rel="stylesheet" href="{% static 'css/audioplayer.css' %}">
-    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
-    <link rel="stylesheet" href="{% static 'css/gijgo.css' %}">
-    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
-    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-
-<body>
-    <header>
-        <div class="header-area ">
-            <div id="sticky-header" class="main-header-area">
-                <div class="container-fluid">
-                    <div class="header_bottom_border">
-                        <div class="row align-items-center">
-                            <div class="col-xl-3 col-lg-2">
-                                <div class="logo">
-                                    <a href="{% url 'index' %}">
-                                        <img src="{% static 'img/logo.png' %}" alt="" class="logo_nav">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-7">
-                                <div class="main-menu  d-none d-lg-block">
-                                    <nav>
-                                        <ul id="navigation">
-                                            <li><a class="active" href="{% url 'index' %}">Home</a></li>
-                                            <li><a href="{% url 'about' %}">Promotores Musicales</a></li>
-                                            <li><a href="{% url 'track' %}">Festivales</a></li>
-                                            <li><a href="{% url 'contact' %}">Intérpretes</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                                <div class="social_icon text-right">
-                                    <ul>
-                                        <li><a href="https://www.facebook.com/PromoConcert"> <i class="fa fa-facebook"></i> </a></li>
-                                        <li><a href="https://www.twitter.com/PromoConcert"> <i class="fa fa-twitter"></i> </a></li>
-                                        <li><a href="https://www.instagram.com/PromoConcert"> <i class="fa fa-instagram"></i> </a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- header-end -->
-
-    <!-- bradcam_area  -->
+   <!-- bradcam_area  -->
     <div class="bradcam_area breadcam_bg_2">
         <div class="container">
             <div class="row">
@@ -87,100 +16,25 @@
         </div>
     </div>
     <!--/ bradcam_area  -->
+ 
+<!-- Lista de promotores -->
+<div class="container mt-5"> 
+    <div class="row">
+        {% for promotor in promotores %}
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="about_info">
+                <img src="{% static promotor.get_imagen_promotor %}" alt="{{ promotor.nombre }}" height="150">
+                <p><strong>País:</strong> {{ promotor.pais_origen }}</p>
 
-
-
-    <!-- footer start -->
-    <footer class="footer">
-        <div class="footer_top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-md-6">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">Contacto</h3>
-                            <ul>
-                                <li><a href="#">info@concertpromoters.com</a></li>
-                                <li><a href="#">+34 987 654 321</a></li>
-                                <li><a href="#">Calle de la Música, 12, Madrid, España</a></li>
-                                <li><a href="#">Horario de atención: Lunes a Viernes, 10:00 - 18:00</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-5 col-md-5 offset-xl-1">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">Sobre Nosotros</h3>
-                            <p>Organización de eventos, promociones, y venta de entradas para los conciertos más esperados. Nuestro equipo está comprometido a llevar la mejor música en vivo a tu ciudad.</p>
-                            <div class="back_to_top">
-                                <a href="#top" class="back_to_top_link">
-                                    <i class="fa fa-arrow-up"></i> Ir al inicio
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
+                <!-- Botón Ver Más -->
+                <a href="{% url 'promotor_detalle' promotor.id %}" class="btn btn-primary">Ver Más</a>
             </div>
         </div>
-        <div class="copy-right_text">
-            <div class="container">
-                <div class="footer_border"></div>
-                <div class="row">
-                    <div class="col-xl-7 col-md-6">
-                        <p class="copy_right">
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Promotores Musicales
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    
-    <!--/ footer end  -->
+        {% endfor %}
+    </div>
+</div>
 
-    <!-- link that opens popup -->
 
-    <!-- JS here -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
-            crossorigin="anonymous">
-    </script>
-    <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
-    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
-    <script src="{% static 'js/ajax-form.js' %}"></script>
-    <script src="{% static 'js/waypoints.min.js' %}"></script>
-    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
-    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
-    <script src="{% static 'js/audioplayer.js' %}"></script>
-    <script src="{% static 'js/scrollIt.js' %}"></script>
-    <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
-    <script src="{% static 'js/wow.min.js' %}"></script>
-    <script src="{% static 'js/nice-select.min.js' %}"></script>
-    <script src="{% static 'js/jquery.slicknav.min.js' %}"></script>
-    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-    <script src="{% static 'js/plugins.js' %}"></script>
-    <script src="{% static 'js/gijgo.min.js' %}"></script>
-    <script src="{% static 'js/slick.min.js' %}"></script>
-    <!--contact js-->
-    <script src="{% static 'js/contact.js' %}"></script>
-    <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
-    <script src="{% static 'js/jquery.form.js' %}"></script>
-    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
-    <script src="{% static 'js/mail-script.js' %}"></script>
 
-    <script src="{% static 'js/main.js' %}"></script>
-    
-		<script>
-                $(function() {
-                    $('audio').audioPlayer({
+{% endblock %}
 
-                    });
-                });
-            </script>
-</body>
-
-</html>

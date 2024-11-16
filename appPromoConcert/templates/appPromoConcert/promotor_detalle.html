@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<!-- bradcam_area  -->
+<div class="bradcam_area breadcam_bg_2">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>{{promotor.nombre}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+
+<!-- Información del promotor -->
+<div class="container">
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="promotor-image">
+                <img src="{% static promotor.get_imagen_promotor %}" alt="{{ promotor.nombre }}" width="500">
+                
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="promotor-info">
+                <h4>{{ promotor.nombre }}</h4>
+                <p>{{ promotor.descripcion }}</p>
+                <p><strong>País de Origen:</strong> {{ promotor.pais_origen }}</p>
+            </div>
+        </div>
+        <!-- Lista de festivales -->
+        <div class="col-xl-8 col-md-6">
+            <h5>Festivales Organizados:</h5>
+            <ul>
+                {% for festival in festivales %}
+                    <li>
+                        <a href="{% url 'festival_detalle' festival.id %}">{{ festival.nombre }} ({{ festival.fecha_inicio }} - {{ festival.fecha_fin }})</a>
+                    </li>
+                {% empty %}
+                    <p>No hay festivales organizados por este promotor.</p>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'about' %}" class="btn btn-primary">Volver a los promotores</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

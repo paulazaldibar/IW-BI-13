@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<!-- bradcam_area  -->
+<div class="bradcam_area breadcam_bg_3">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>{{festival.nombre}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+
+<div class="container">
+    <h2>{{ festival.nombre }}</h2>
+    <div class="festival-detail">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="festival-image">
+                    <img src="{% static festival.get_imagen_festival %}" alt="{{ festival.nombre }}" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="festival-info">
+                    <p><strong>Fecha de Inicio:</strong> {{ festival.fecha_inicio }}</p>
+                    <p><strong>Fecha de Fin:</strong> {{ festival.fecha_fin }}</p>
+                    <p><strong>Ubicación:</strong> {{ festival.ubicacion }}</p>
+                    <p><strong>Promotor:</strong> {{ festival.promotor }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <h3>Intérpretes</h3>
+                <ul>
+                    {% for interprete in interpretes %}
+                        <li>{{ interprete.nombre }} - {{ interprete.genero }} ({{ interprete.pais_origen }})</li>
+                     {% empty %}
+                         <li>No hay intérpretes confirmados para este festival todavía.</li>
+                    {% endfor %}
+                </ul>
+                <a href="{% url 'track' %}" class="btn btn-primary">Volver a los festivales</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
