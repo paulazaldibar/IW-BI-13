@@ -43,7 +43,7 @@
                         <a href="{% url 'festival_detalle' festival.id %}">{{ festival.nombre }} ({{ festival.fecha_inicio }} - {{ festival.fecha_fin }})</a>
                     </li>
                 {% empty %}
-                    <p>No hay festivales organizados por este promotor.</p>
+                    <li><p>No hay festivales organizados por este promotor.</p></li>
                 {% endfor %}
             </ul>
             <a href="{% url 'about' %}" class="btn btn-primary">Volver a los promotores</a>
