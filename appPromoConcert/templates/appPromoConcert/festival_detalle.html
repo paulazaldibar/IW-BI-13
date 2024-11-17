@@ -5,7 +5,7 @@
 
 
 <!-- bradcam_area  -->
-<div class="bradcam_area breadcam_bg_3">
+<div class="bradcam_area breadcam_bg_3 mb-5">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -18,11 +18,11 @@
 </div>
 <!--/ bradcam_area  -->
 
-<div class="container">
+<div class="container mb-5">
     <h2>{{ festival.nombre }}</h2>
     <div class="festival-detail">
-        <div class="row">
-            <div class="col-xl-6">
+        <div class="row mb-5">
+            <div class="col-xl-6 mb-4">
                 <div class="festival-image">
                     <img src="{% static festival.get_imagen_festival %}" alt="{{ festival.nombre }}" class="img-fluid">
                 </div>
@@ -38,8 +38,8 @@
         </div>
         <div class="row">
             <div class="col-xl-12">
-                <h3>Intérpretes</h3>
-                <ul>
+                <h3 class="mb-4">Intérpretes</h3>
+                <ul class="mb-4">
                     {% for interprete in interpretes %}
                         <li>{{ interprete.nombre }} - {{ interprete.genero }} ({{ interprete.pais_origen }})</li>
                      {% empty %}

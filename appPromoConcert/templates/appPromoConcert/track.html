@@ -3,8 +3,8 @@
 {% block content %}
 {% load static %}
 
-    <!-- bradcam_area  -->
-<div class="bradcam_area breadcam_bg_3">
+<!-- bradcam_area -->
+<div class="bradcam_area breadcam_bg_3 mb-5">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -15,41 +15,30 @@
         </div>
     </div>
 </div>
-<!--/ bradcam_area  -->
+<!--/ bradcam_area -->
 
-
-<div class="container">
-        <h2>Todos los Festivales</h2>
-        {% for festival in festivales %}
-        <div class="row align-items-center mb-40">
-            <div class="col-xl-12">
-                <div class="row align-items-center">
-                    <div class="col-xl-8 col-md-8">
-                       
-                            <div class="thumb">
-                                <img src="{% static festival.get_imagen_festival %}" alt="{{ festival.nombre }}" width="500">
-                            </div>
-                            <div class="audio_name">
-                                <div class="name">
-                                    <h4>{{ festival.nombre }}</h4>
-                                    <p>{{ festival.fecha_inicio }}</p>
-                                </div>
-                            </div>
-                        
-                    </div>
-                    <div class="col-xl-3 col-md-3">
-                        <div class="music_btn">
-                            <a href="{% url 'festival_detalle' festival.id %}" class="boxed-btn">Ver más</a>
-                        </div>
-                    </div>
+<div class="container mb-5">
+    <h2 class="mb-4">Todos los Festivales</h2>
+    {% for festival in festivales %}
+    <div class="row align-items-center mb-5">
+        <div class="col-xl-8 col-md-8">
+            <div class="thumb mb-3">
+                <img src="{% static festival.get_imagen_festival %}" alt="{{ festival.nombre }}" class="img-fluid">
+            </div>
+            <div class="audio_name">
+                <div class="name">
+                    <h4 class="mb-2">{{ festival.nombre }}</h4>
+                    <p>{{ festival.fecha_inicio }}</p>
                 </div>
             </div>
         </div>
-        {% endfor %}
+        <div class="col-xl-3 col-md-4 text-md-right text-center mt-3 mt-md-0">
+            <div class="music_btn">
+                <a href="{% url 'festival_detalle' festival.id %}" class="boxed-btn">Ver más</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div>
-    
-{% endblock %}
- 
-    
 
-    
+{% endblock %}

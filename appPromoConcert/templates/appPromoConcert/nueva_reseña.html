@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- bradcam_area  -->
+<div class="bradcam_area breadcam_bg_5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>Nueva Reseña</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+
+<div class="container">
+    <h2>Escribir una reseña</h2>
+    <form method="post">
+        {% csrf_token %}
+        
+        <!-- Nombre -->
+        <div class="form-group">
+            <label for="id_nombre">Nombre:</label>
+            {{ form.nombre }}
+        </div>
+
+        <!-- Festival -->
+        <div class="form-group">
+            <label for="id_festival">Festival:</label>
+            {{ form.festival }}
+        </div>
+
+        <!-- Texto -->
+        <div class="form-group">
+            <label for="id_texto">Comentario:</label>
+            {{ form.comentario }}
+        </div>
+
+        <!-- Calificación -->
+        <div class="calificacion">
+            <input type="radio" id="star5" name="calificacion" value="5">
+            <label for="star5" title="5 estrellas">★</label>
+            <input type="radio" id="star4" name="calificacion" value="4">
+            <label for="star4" title="4 estrellas">★</label>
+            <input type="radio" id="star3" name="calificacion" value="3">
+            <label for="star3" title="3 estrellas">★</label>
+            <input type="radio" id="star2" name="calificacion" value="2">
+            <label for="star2" title="2 estrellas">★</label>
+            <input type="radio" id="star1" name="calificacion" value="1">
+            <label for="star1" title="1 estrella">★</label>
+        </div>
+        
+
+        <!-- Botón de envío -->
+        <button type="submit" class="btn btn-success mb-5">Enviar</button>
+        <a href="{% url 'reseñas' %}" class="btn btn-secondary mb-5">Volver</a>
+    </form>
+</div>
+{% endblock %}

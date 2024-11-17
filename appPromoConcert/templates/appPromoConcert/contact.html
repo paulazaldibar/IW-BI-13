@@ -2,34 +2,32 @@
 {% block content %}
 {% load static %}
 
-
-
-    <!-- bradcam_area  -->
-    <div class="bradcam_area breadcam_bg_4">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="bradcam_text text-center">
-                        <h3>Intérpretes</h3>
-                    </div>
+<!-- bradcam_area -->
+<div class="bradcam_area breadcam_bg_4 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>Intérpretes</h3>
                 </div>
             </div>
         </div>
     </div>
-    <!--/ bradcam_area  -->
+</div>
+<!--/ bradcam_area -->
 
 <!-- Lista de intérpretes -->
 <div class="container">
-    <h2>Todos los Artistas</h2>
+    <h2 class="mb-4">Todos los Artistas</h2>
     <div class="row">
         {% for interprete in interpretes %}
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="interprete_item">
-                <div class="thumb">
-                    <img src="{% static interprete.get_imagen_interprete %}" alt="{{ interprete.nombre }}" class="img-fluid">
+        <div class="col-xl-4 col-md-6 mb-4 d-flex align-items-stretch">
+            <div class="interprete_item text-center border p-3 rounded shadow-sm">
+                <div class="thumb mb-3">
+                    <img src="{% static interprete.get_imagen_interprete %}" alt="{{ interprete.nombre }}" class="img-fluid rounded interprete-img">
                 </div>
                 <div class="info">
-                    <h4>{{ interprete.nombre }}</h4>
+                    <h4 class="mb-2">{{ interprete.nombre }}</h4>
                     <p>{{ interprete.genero }}</p>
                     <a href="{% url 'interprete_detalle' interprete.id %}" class="boxed-btn">Ver más</a>
                 </div>

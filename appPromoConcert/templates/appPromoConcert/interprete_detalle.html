@@ -4,7 +4,7 @@
 {% load static %}
 
 <!-- bradcam_area -->
-<div class="bradcam_area breadcam_bg_4">
+<div class="bradcam_area breadcam_bg_4 mb-5">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -18,21 +18,21 @@
 <!--/ bradcam_area -->
 
 <!-- Detalle del intérprete -->
-<div class="container">
-    <div class="row">
-        <div class="col-xl-4 col-md-5">
+<div class="container mb-5">
+    <div class="row align mb-5">
+        <div class="col-xl-4 col-md-5 mb-4">
             <div class="interprete_thumb">
                 <img src="{% static interprete.get_imagen_interprete %}" alt="{{ interprete.nombre }}" class="img-fluid">
             </div>
         </div>
         <div class="col-xl-8 col-md-7">
             <div class="interprete_info">
-                <h4>{{ interprete.nombre }}</h4>
+                <h4 class="mb-4">{{ interprete.nombre }}</h4>
                 <p><strong>Género:</strong> {{ interprete.genero }}</p>
                 <p><strong>País de origen:</strong> {{ interprete.pais_origen }}</p>
 
-                <h5>Festivales en los que cantará:</h5>
-                <ul>
+                <h5 class="mb-3">Festivales en los que cantará:</h5>
+                <ul class="mb-4">
                     {% for festival in interprete.festivales.all %}
                         <li>{{ festival.nombre }} ({{ festival.fecha_inicio }} - {{ festival.fecha_fin }})</li>
                     {% endfor %}

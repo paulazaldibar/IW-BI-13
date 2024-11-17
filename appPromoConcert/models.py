@@ -37,3 +37,19 @@ class Interprete(models.Model):
     
     def get_imagen_interprete(self):
         return f'img/interpretes/{self.id}.png'
+    
+#reseñas
+class Reseña(models.Model):
+    nombre = models.CharField(max_length=100)
+    festival = models.ForeignKey('Festival', on_delete=models.CASCADE, related_name='reseñas')
+    comentario = models.TextField()
+    fecha = models.DateTimeField(auto_now_add=True)
+    calificacion = models.IntegerField(default=0)  # Valor entre 1 y 5
+
+
+    def __str__(self):
+        return f"Reseña de {self.nombre} sobre {self.festival.nombre}"
+    
+    #para convertir calificacion en estrellas
+    def estrellas(self):
+        return ['★' if i < self.calificacion else '☆' for i in range(5)]

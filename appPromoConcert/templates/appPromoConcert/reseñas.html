@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- bradcam_area  -->
+<div class="bradcam_area breadcam_bg_5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>Reseñas</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+
+
+<div class="container mb-5">
+    <a href="{% url 'nueva_reseña' %}" class="btn btn-primary mb-5">Escribir una reseña</a>
+    <div class="list-group">
+        {% for reseña in reseñas %}
+        <div class="list-group-item">
+            <h4>{{ reseña.nombre }}</h4>
+            <h5>Festival: {{ reseña.festival.nombre }}</h5> 
+            <div class="estrellas">
+                {% for i in reseña.range_calificacion %}
+                    <i class="fa fa-star"></i>  <!-- Estrella llena -->
+                {% endfor %}
+                {% for i in reseña.range_estrellas_vacias %}
+                    <i class="fa fa-star-o"></i>  <!-- Estrella vacía -->
+                {% endfor %}
+            </div>
+            <p>{{ reseña.comentario }}</p>
+            <small>{{ reseña.fecha|date:"d M Y H:i" }}</small>
+        </div>
+        
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
-from .models import PromotorMusical, Festival, Interprete
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import PromotorMusical, Festival, Interprete, Reseña
 from django.db.models import OuterRef,Subquery,Max
+from .forms import ReseñaForm
 
 # Create your views here.
 #aqui hay que "diseñar" las páginas
@@ -65,3 +66,21 @@ def contact(request):
 def interprete_detalle(request, id):
     interprete = get_object_or_404(Interprete, id=id)  
     return render(request, 'appPromoConcert/interprete_detalle.html', {'interprete': interprete})
+
+#reseñas
+def reseñas(request):
+    reseñas = Reseña.objects.all().order_by('-fecha')
+    for reseña in reseñas:
+        reseña.range_calificacion = range(reseña.calificacion)
+        reseña.range_estrellas_vacias = range(5 - reseña.calificacion)
+    return render(request, 'appPromoConcert/reseñas.html', {'reseñas': reseñas})
+
+def nueva_reseña(request):
+    if request.method == 'POST':
+        form = ReseñaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('reseñas')
+    else:
+        form = ReseñaForm()
+    return render(request, 'appPromoConcert/nueva_reseña.html', {'form': form})

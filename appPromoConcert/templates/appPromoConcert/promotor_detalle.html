@@ -4,7 +4,7 @@
 {% load static %}
 
 <!-- bradcam_area  -->
-<div class="bradcam_area breadcam_bg_2">
+<div class="bradcam_area breadcam_bg_2 mb-5">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -18,12 +18,11 @@
 <!--/ bradcam_area  -->
 
 <!-- Información del promotor -->
-<div class="container">
-    <div class="row">
-        <div class="col-xl-6">
+<div class="container mb-5">
+    <div class="row mb-5">
+        <div class="col-xl-6 mb-4">
             <div class="promotor-image">
-                <img src="{% static promotor.get_imagen_promotor %}" alt="{{ promotor.nombre }}" width="500">
-                
+                <img src="{% static promotor.get_imagen_promotor %}" alt="{{ promotor.nombre }}" class="img-fluid">
             </div>
         </div>
         <div class="col-xl-6">
@@ -33,10 +32,12 @@
                 <p><strong>País de Origen:</strong> {{ promotor.pais_origen }}</p>
             </div>
         </div>
-        <!-- Lista de festivales -->
+    </div>
+    <!-- Lista de festivales -->
+    <div class="row mb-5">
         <div class="col-xl-8 col-md-6">
             <h5>Festivales Organizados:</h5>
-            <ul>
+            <ul class="mb-4">
                 {% for festival in festivales %}
                     <li>
                         <a href="{% url 'festival_detalle' festival.id %}">{{ festival.nombre }} ({{ festival.fecha_inicio }} - {{ festival.fecha_fin }})</a>
