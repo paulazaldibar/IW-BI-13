@@ -52,10 +52,3 @@ urlpatterns = [
     path('reseñas/', ReseñasView.as_view(), name='reseñas'),
     path('reseñas/nueva/', NuevaReseñaView.as_view(), name='nueva_reseña'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-
-<<<<<<< HEAD
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-=======
->>>>>>> 522b012b126e5727542f3fa710f6d2fe3abb0fc7
