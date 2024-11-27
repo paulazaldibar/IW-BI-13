@@ -14,20 +14,23 @@ from django.urls import reverse_lazy
 from .models import Reseña
 from .forms import ReseñaForm
 
-
-
 # Create your views here.
 #aqui hay que "diseñar" las páginas
 #y luego en urls.py hay que añadirle dirección a cada pagina
 
+#MAIN-------------------------------------------------------------------------------------
+
+#funcion:
 #def main(request):
 #   return render(request, 'appPromoConcert/main.html')
 
-
+#clase:
 class MainView(TemplateView):
     template_name = 'appPromoConcert/main.html'
 
-#home
+#INDEX--------------------------------------------------------------------------------------
+
+#Funcion:
 #def index(request):
 #
 #   subconsulta = Festival.objects.filter(promotor=OuterRef('promotor')).order_by('-fecha_inicio').values('id')[:1]
@@ -43,39 +46,47 @@ class MainView(TemplateView):
 #        'festivales': festivales_por_promotor,
 #    })
 
+#Clase:
 class IndexView(ListView):
     model = Festival
     template_name = 'appPromoConcert/index.html'
     context_object_name = 'festivales'
 
     def get_queryset(self):
-       # Filtrar los festivales más recientes por promotor
+       #coger festival más reciente por cada promotor
        subconsulta = Festival.objects.filter(promotor=OuterRef('promotor')).order_by('-fecha_inicio').values('id')[:1]
        return Festival.objects.filter(id__in=Subquery(subconsulta))
+    
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        #Agregar lógica adicional para añadir imagen_url a cada festival
+        #coger cada imagen por festival
         for festival in context['festivales']:
             festival.imagen_url = f'img/festivales/{festival.id}.png'
         return context
 
-#promotores
+#PROMOTORES--------------------------------------------------------------------------------------
+
+#funcion:
 #def about(request):
 #    promotores = PromotorMusical.objects.all()
 #    return render(request, 'appPromoConcert/about.html', {'promotores' : promotores})
 
+#Clase:
 class AboutView(ListView):
     model = PromotorMusical
     template_name = 'appPromoConcert/about.html'
     context_object_name = 'promotores'
 
+#PROMOTOR DETALLE--------------------------------------------------------------------------------------
 
+#funcion: 
 #def promotor_detalle(request, promotor_id):
 #    promotor = get_object_or_404(PromotorMusical, pk=promotor_id)
 #    festivales = promotor.festivales.all()
 #    return render(request, 'appPromoConcert/promotor_detalle.html', {'promotor':promotor, 'festivales': festivales})
 
 
+#clase:
 class PromotorDetalleView(DetailView):
     model = PromotorMusical
     template_name = 'appPromoConcert/promotor_detalle.html'
@@ -86,7 +97,9 @@ class PromotorDetalleView(DetailView):
         context['festivales'] = self.object.festivales.all()
         return context
 
-#festivales
+#FESTIVALES--------------------------------------------------------------------------------------
+
+#funcion:
 #def track(request):
 #    festivales = Festival.objects.all()
     
@@ -95,39 +108,22 @@ class PromotorDetalleView(DetailView):
 #    }
 #    return render(request, 'appPromoConcert/track.html', context)
 
+#clase:
 class TrackView(ListView):
     model = Festival
     template_name = 'appPromoConcert/track.html'
     context_object_name = 'festivales'
 
 
-class FestivalDetalleView(DetailView):
-    model = Festival
-    template_name = 'appPromoConcert/festival_detalle.html'
-    context_object_name = 'festival'
+#FESTIVAL DETALLE--------------------------------------------------------------------------------------
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['interpretes'] = self.object.interpretes.all()
-        return context
-
-
-
-
-class InterpreteDetalleView(DetailView):
-    model = Interprete
-    template_name = 'appPromoConcert/interprete_detalle.html'
-    context_object_name = 'interprete'
-
-
-
-
-
+#funcion:
 #def festival_detalle(request, id):
 #    festival = get_object_or_404(Festival, id=id)
 #    interpretes = festival.interpretes.all()
 #    return render(request, 'appPromoConcert/festival_detalle.html', {'festival': festival, 'interpretes': interpretes})
 
+#clase:
 class FestivalDetalleView(DetailView):
     model = Festival
     template_name = 'appPromoConcert/festival_detalle.html'  # Nombre del template que mostrarás
@@ -139,26 +135,48 @@ class FestivalDetalleView(DetailView):
         context['interpretes'] = festival.interpretes.all()  # Agrega los intérpretes al contexto
         return context
 
-def test_base(request):
-    return render(request, 'base.html')
 
+#INTERPRETES--------------------------------------------------------------------------------------
 
-#interpretes
+#funcion:
 #def contact(request):
 #    interpretes = Interprete.objects.all()
 #    return render(request, 'appPromoConcert/contact.html', {'interpretes': interpretes})
 
+#clase:
+class InterpreteDetalleView(DetailView):
+    model = Interprete
+    template_name = 'appPromoConcert/interprete_detalle.html'
+    context_object_name = 'interprete'
+
+#INTERPRETE DETALLE--------------------------------------------------------------------------------------
+
+#funcion:
+#def interprete_detalle(request, id):
+#    interprete = get_object_or_404(Interprete, id=id)  
+#    return render(request, 'appPromoConcert/interprete_detalle.html', {'interprete': interprete})
+
+#clase:
 class ContactView(ListView):
     model = Interprete
     template_name = 'appPromoConcert/contact.html'
     context_object_name = 'interpretes'
 
+#BASE--------------------------------------------------------------------------------------
 
-def interprete_detalle(request, id):
-    interprete = get_object_or_404(Interprete, id=id)  
-    return render(request, 'appPromoConcert/interprete_detalle.html', {'interprete': interprete})
+#funcion:
+#def test_base(request):
+#    return render(request, 'base.html')
 
-#reseñas
+
+#clase:
+class TestBaseView(TemplateView):
+    template_name = 'base.html'
+
+
+#RESEÑAS----------------------------------------------------------------------------------------------
+
+#funcion:
 #def reseñas(request):
 #    reseñas = Reseña.objects.all().order_by('-fecha')
 #    for reseña in reseñas:
@@ -166,6 +184,7 @@ def interprete_detalle(request, id):
 #        reseña.range_estrellas_vacias = range(5 - reseña.calificacion)
 #    return render(request, 'appPromoConcert/reseñas.html', {'reseñas': reseñas})
 
+#clase:
 class ReseñasView(ListView):
     model = Reseña
     template_name = 'appPromoConcert/reseñas.html'
@@ -180,7 +199,9 @@ class ReseñasView(ListView):
             reseña.range_estrellas_vacias = range(5 - reseña.calificacion)
         return context
 
+#NUEVA RESEÑA-------------------------------------------------------------------------------
 
+#funcion:
 #def nueva_reseña(request):
 #    if request.method == 'POST':
 #        form = ReseñaForm(request.POST)
@@ -191,9 +212,7 @@ class ReseñasView(ListView):
 #        form = ReseñaForm()
 #    return render(request, 'appPromoConcert/nueva_reseña.html', {'form': form})
 
-
-
-
+#clase:
 class NuevaReseñaView(CreateView):
     model = Reseña
     form_class = ReseñaForm
@@ -201,7 +220,3 @@ class NuevaReseñaView(CreateView):
     success_url = reverse_lazy('reseñas')
 
 
-
-
-class TestBaseView(TemplateView):
-    template_name = 'base.html'
