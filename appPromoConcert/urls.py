@@ -22,3 +22,4 @@ urlpatterns = [
     path('reseñas/nueva/', views.nueva_reseña, name='nueva_reseña'),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

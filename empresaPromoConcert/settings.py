@@ -106,13 +106,27 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
+
+# Añadido: Idiomas soportados
+LANGUAGES = [
+    ('en', 'English'),
+    ('es', 'Español'),
+]
+
+# Añadido: Ruta para los archivos de traducción
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale')  # Carpeta donde estarán los archivos de traducción
+]
+
 
 
 # Static files (CSS, JavaScript, Images)
