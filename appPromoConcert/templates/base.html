@@ -48,11 +48,11 @@
                             <div class="col-xl-3 col-lg-3 d-flex justify-content-end align-items-center">
                                 <div class="language-switcher">
                                     <form method="get" action="{% url 'set_language' %}">
+                                        {% csrf_token %}
                                         <select name="language" onchange="this.form.submit()">
                                             <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
                                             <option value="es" {% if LANGUAGE_CODE == 'es' %}selected{% endif %}>Español</option>
                                         </select>
-                                        {% csrf_token %}
                                     </form>
                                 </div>
                                 <div class="social_icon text-right">

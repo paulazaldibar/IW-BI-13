@@ -37,18 +37,14 @@ urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('about/', AboutView.as_view(), name='about'),
     path('promotor/<int:pk>/', PromotorDetalleView.as_view(), name='promotor_detalle'),
-
     path('contact/', ContactView.as_view(), name='contact'),
     path('interprete/<int:pk>/', InterpreteDetalleView.as_view(), name='interprete_detalle'), 
-
     path('track/', TrackView.as_view(), name='track'),
     path('track/<int:pk>/', FestivalDetalleView.as_view(), name='festival_detalle'),
-    
     path('main/', MainView.as_view(), name='main'),
-    path('base/', TestBaseView.as_view(), name='test_base'),  # Si esta vista sigue siendo FBV, no la cambies
-
-    path('track/<int:pk>/', FestivalDetalleView.as_view(), name='festival_detalle'),  # Usa la CBV
-
+    path('base/', TestBaseView.as_view(), name='test_base'),
+    #path('track/<int:pk>/', FestivalDetalleView.as_view(), name='festival_detalle'), 
     path('reseñas/', ReseñasView.as_view(), name='reseñas'),
     path('reseñas/nueva/', NuevaReseñaView.as_view(), name='nueva_reseña'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

@@ -13,6 +13,9 @@ from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from .models import Reseña
 from .forms import ReseñaForm
+from django.utils import translation
+from django.http import HttpResponseRedirect
+from django.urls import reverse 
 
 # Create your views here.
 #aqui hay que "diseñar" las páginas
@@ -220,3 +223,11 @@ class NuevaReseñaView(CreateView):
     success_url = reverse_lazy('reseñas')
 
 
+#Traduccion
+
+def set_language(request):
+    user_language = request.POST.get('language', 'en') 
+    translation.activate(user_language)
+    request.session[translation.LANGUAGE_SESSION_KEY] = user_language
+    print(f'Idioma cambiado a: {user_language}')
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/')) 

@@ -20,43 +20,43 @@ msgstr ""
 
 #: .\appPromoConcert\templates\base.html:8
 msgid "PromoConcert"
-msgstr ""
+msgstr "PromoConcert"
 
 #: .\appPromoConcert\templates\base.html:9
 msgid "Página de promoción y conciertos"
-msgstr ""
+msgstr "Promotion and concerts page"
 
 #: .\appPromoConcert\templates\base.html:39
 msgid "Inicio"
-msgstr ""
+msgstr "Home"
 
 #: .\appPromoConcert\templates\base.html:40
 msgid "Promotores Musicales"
-msgstr ""
+msgstr "Music Promoters"
 
 #: .\appPromoConcert\templates\base.html:41
 msgid "Festivales"
-msgstr ""
+msgstr "Festivals"
 
 #: .\appPromoConcert\templates\base.html:42
 msgid "Intérpretes"
-msgstr ""
+msgstr "Interpreters"
 
 #: .\appPromoConcert\templates\base.html:43
 msgid "Reseñas"
-msgstr ""
+msgstr "Reviews"
 
 #: .\appPromoConcert\templates\base.html:89
 msgid "Contacto"
-msgstr ""
+msgstr "Contact"
 
 #: .\appPromoConcert\templates\base.html:94
 msgid "Horario de atención: Lunes a Viernes, 10:00 - 18:00"
-msgstr ""
+msgstr "Opening hours: Monday to Friday, 10:00-18:00"
 
 #: .\appPromoConcert\templates\base.html:100
 msgid "Sobre Nosotros"
-msgstr ""
+msgstr "About u"
 
 #: .\appPromoConcert\templates\base.html:101
 msgid ""
@@ -64,11 +64,13 @@ msgid ""
 "conciertos más esperados. Nuestro equipo está comprometido a llevar la mejor "
 "música en vivo a tu ciudad."
 msgstr ""
+"Organization of events, promotions, and ticket sales for the most anticipated "
+"concerts. Our team is committed to bringing the best live music to your city."
 
 #: .\appPromoConcert\templates\base.html:104
 msgid "Ir al inicio"
-msgstr ""
+msgstr "Go Home"
 
 #: .\appPromoConcert\templates\base.html:118
 msgid "Todos los derechos reservados | Promotores Musicales"
-msgstr ""
+msgstr "All rights reserved | Music Promoters"
