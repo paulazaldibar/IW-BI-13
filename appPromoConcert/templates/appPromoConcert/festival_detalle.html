@@ -32,7 +32,8 @@
                     <p><strong>Fecha de Inicio:</strong> {{ festival.fecha_inicio }}</p>
                     <p><strong>Fecha de Fin:</strong> {{ festival.fecha_fin }}</p>
                     <p><strong>Ubicación:</strong> {{ festival.ubicacion }}</p>
-                    <p><strong>Promotor:</strong> {{ festival.promotor }}</p>
+                    <p><strong>Promotor musical: <a href="{% url 'promotor_detalle' festival.promotor.id %}" class="custom-link">{{ festival.promotor }}</a></strong></p>
+                    
                 </div>
             </div>
         </div>
@@ -42,7 +43,7 @@
                 <ul class="mb-4">
                     {% for interprete in interpretes %}
                         <!--<li>{{ interprete.nombre }} - {{ interprete.genero }} ({{ interprete.pais_origen }})</li>-->
-                        <li><a href="{% url 'interprete_detalle' interprete.id %}" class="btn btn-primary">{{ interprete.nombre }} - {{ interprete.genero }} ({{ interprete.pais_origen }})</a></li>
+                        <li><a href="{% url 'interprete_detalle' interprete.id %}" class="custom-link">{{ interprete.nombre }} - {{ interprete.genero }} ({{ interprete.pais_origen }})</a></li>
                      {% empty %}
                          <li>No hay intérpretes confirmados para este festival todavía.</li>
                     {% endfor %}

@@ -34,7 +34,7 @@
                 <h5 class="mb-3">Festivales en los que cantará:</h5>
                 <ul class="mb-4">
                     {% for festival in interprete.festivales.all %}
-                        <li>{{ festival.nombre }} ({{ festival.fecha_inicio }} - {{ festival.fecha_fin }})</li>
+                        <li><a href="{% url 'festival_detalle' festival.id %}">{{ festival.nombre }} ({{ festival.fecha_inicio }} - {{ festival.fecha_fin }})</a></li>
                     {% endfor %}
                 </ul>
                 <a href="{% url 'contact' %}" class="btn btn-primary">Volver a los intérpretes</a>
