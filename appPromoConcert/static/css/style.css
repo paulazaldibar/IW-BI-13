@@ -426,9 +426,9 @@ h3 {
 
 /* line 19, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_btn.scss */
 .boxed-btn:hover {
-  background: #ED1B1B;
+  background: #ed1b87;
   color: #fff !important;
-  border: 1px solid #ED1B1B;
+  border: 1px solid #ed1b87;
 }
 
 /* line 24, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_btn.scss */
@@ -444,7 +444,7 @@ h3 {
 /* line 32, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_btn.scss */
 .boxed-btn3 {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0181f5+0,5db2ff+100 */
-  background: #ED1B1B;
+  background: #ed1b87;
   color: #fff;
   display: inline-block;
   padding: 12px 42px;
@@ -466,8 +466,8 @@ h3 {
 /* line 49, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_btn.scss */
 .boxed-btn3:hover {
   background: transparent;
-  color: #ED1B1B !important;
-  border: 1px solid #ED1B1B;
+  color: #ed1b87 !important;
+  border: 1px solid #ed1b87;
 }
 
 /* line 54, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_btn.scss */
@@ -744,12 +744,12 @@ h3 {
 /* line 28, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_slick-nav.scss */
 .slicknav_menu .slicknav_nav a:hover {
   background: transparent;
-  color: #ED1B1B;
+  color: #ed1b87;
 }
 
 /* line 32, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_slick-nav.scss */
 .slicknav_menu .slicknav_nav a.active {
-  color: #ED1B1B;
+  color: #ed1b87;
 }
 
 @media (max-width: 767px) {
@@ -976,7 +976,7 @@ img[src="{% static 'img/logo.png' %}"] {
 
 /* line 81, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
 .header-area .main-header-area .social_icon ul li a:hover {
-  color: #ED1B1B;
+  color: #ed1b87;
 }
 
 /* line 88, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
@@ -1076,9 +1076,9 @@ img[src="{% static 'img/logo.png' %}"] {
 
 /* line 141, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
 .header-area .main-header-area .Appointment .book_btn a:hover {
-  background: #ED1B1B;
+  background: #ed1b87;
   color: #fff;
-  border: 1px solid #ED1B1B;
+  border: 1px solid #ed1b87;
 }
 
 /* line 149, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
@@ -1154,7 +1154,7 @@ img[src="{% static 'img/logo.png' %}"] {
 
 /* line 213, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li a:hover {
-  color: #ED1B1B;
+  color: #ed1b87;
 }
 
 /* line 217, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
@@ -2744,7 +2744,7 @@ img[src="{% static 'img/logo.png' %}"] {
 
 /* line 367, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_offers.scss */
 #test-form .white-popup-block .popup_inner .gj-datepicker span {
-  color: red;
+  color: pink;
 }
 
 /* line 372, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_offers.scss */
@@ -2888,8 +2888,8 @@ img[src="{% static 'img/logo.png' %}"] {
 
 /* line 61, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_footer.scss */
 .footer .footer_top .footer_widget p.footer_text a.domain:hover {
-  color: #ED1B1B;
-  border-bottom: 1px solid #ED1B1B;
+  color: #ed1b87;
+  border-bottom: 1px solid #ed1b87;
 }
 
 /* line 67, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_footer.scss */
@@ -2900,8 +2900,8 @@ img[src="{% static 'img/logo.png' %}"] {
 
 /* line 71, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_footer.scss */
 .footer .footer_top .footer_widget p.footer_text.doanar a:hover {
-  color: #ED1B1B;
-  border-bottom: 1px solid #ED1B1B;
+  color: #ed1b87;
+  border-bottom: 1px solid #ed1b87;
 }
 
 /* line 75, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_footer.scss */
@@ -2924,7 +2924,7 @@ img[src="{% static 'img/logo.png' %}"] {
 
 /* line 90, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_footer.scss */
 .footer .footer_top .footer_widget ul li a:hover {
-  color: #ED1B1B;
+  color: #ed1b87;
 }
 
 /* line 96, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_footer.scss */
@@ -3134,12 +3134,12 @@ img[src="{% static 'img/logo.png' %}"] {
 /* line 232, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_footer.scss */
 .footer .socail_links ul li a:hover {
   color: #fff !important;
-  background: #ED1B1B;
+  background: #ed1b87;
 }
 
 /* line 237, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_footer.scss */
 .footer .socail_links ul li:nth-child(2) a {
-  background: #DB4337;
+  background: #ed1b87;
 }
 
 /* line 240, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_footer.scss */
@@ -3149,7 +3149,7 @@ img[src="{% static 'img/logo.png' %}"] {
 
 /* line 243, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_footer.scss */
 .footer .socail_links ul li:nth-child(4) a {
-  background: #BB0000;
+  background: #ed1b87;
 }
 
 /* line 246, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_footer.scss */
@@ -4031,7 +4031,7 @@ img[src="{% static 'img/logo.png' %}"] {
 
 /* line 39, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_video.scss */
 .youtube_video_area .single_video .hover_elements .video a {
-  background: #ED1B1B;
+  background: #ed1b87;
   width: 58px;
   height: 58px;
   -webkit-border-radius: 50%;
@@ -4084,7 +4084,7 @@ img[src="{% static 'img/logo.png' %}"] {
 .youtube_video_area .single_video .hover_elements .hover_inner span {
   font-size: 14px;
   font-weight: 400;
-  color: #ED1B1B;
+  color: #ed1b87;
   font-family: "Muli", sans-serif;
   -webkit-transition: 0.4s;
   -moz-transition: 0.4s;
@@ -7404,7 +7404,7 @@ h6 {
 
 .calificacion label:hover,
 .calificacion label:hover ~ label {
-  color: #f5b301;
+  color: #ed1b87;
 }
 
 /*estrellas pag reseñas*/

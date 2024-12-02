@@ -41,7 +41,8 @@
                 <h3 class="mb-4">Intérpretes</h3>
                 <ul class="mb-4">
                     {% for interprete in interpretes %}
-                        <li>{{ interprete.nombre }} - {{ interprete.genero }} ({{ interprete.pais_origen }})</li>
+                        <!--<li>{{ interprete.nombre }} - {{ interprete.genero }} ({{ interprete.pais_origen }})</li>-->
+                        <li><a href="{% url 'interprete_detalle' interprete.id %}" class="btn btn-primary">{{ interprete.nombre }} - {{ interprete.genero }} ({{ interprete.pais_origen }})</a></li>
                      {% empty %}
                          <li>No hay intérpretes confirmados para este festival todavía.</li>
                     {% endfor %}

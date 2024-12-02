@@ -80,8 +80,9 @@ WSGI_APPLICATION = 'empresaPromoConcert.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+DATABASES = {#hacer otro settings para local (poner el url explicitamente)
+    #'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': dj_database_url.config(default='postgresql://promo_concert_user:9ygi8chccaU1VcKa4I4astT4fwlvweW5@dpg-ct67gvqlqhvc73afj890-a.frankfurt-postgres.render.com/promo_concert')
 
     #'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
