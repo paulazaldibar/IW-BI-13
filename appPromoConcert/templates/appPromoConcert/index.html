@@ -40,26 +40,29 @@
     <!--/ about_area  -->
 
     <!-- Festivales por Promotor -->
-<div class="container">
-    <h2>Festivales por Promotor</h2>
+<div class="container mb-5">
+    <h2 class="mb-4">Festivales por Promotor</h2>
     {% for festival in festivales %}
-    <div class="row align-items-center mb-4">
-        <div class="col-md-4">
-           
-                    <!-- Imagen del festival -->
-                    <div class="thumb">
-                        <img src="{% static festival.get_imagen_festival %}" alt="{{ festival.nombre }}" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <!-- Nombre del promotor -->
-                    <h4>{{ festival.promotor.nombre }}</h4>
-                    <!-- Nombre y fechas del festival -->
-                    <h5>{{ festival.nombre }}</h5>
-                    <p>Fecha de inicio: {{ festival.fecha_inicio }}</p>
-                    <p>Fecha de fin: {{ festival.fecha_fin }}</p>
-                </div>
+    <div class="row align-items-center mb-5">
+        <div class="col-xl-8 col-md-8">
+            <!-- Imagen del festival -->
+            <div class="thumb mb-3">
+               <img src="{% static festival.get_imagen_festival %}" alt="{{ festival.nombre }}" class="img-fluid">                
             </div>
+            <div class="audio_name">
+            <!-- Nombre del promotor -->
+                <h4>{{ festival.promotor.nombre }}</h4>
+            <!-- Nombre y fechas del festival -->
+                <h5>{{ festival.nombre }}</h5>
+                <p>Fecha de inicio: {{ festival.fecha_inicio }}</p>
+                <p>Fecha de fin: {{ festival.fecha_fin }}</p>
+                <div class="music_btn">
+                    <a href="{% url 'festival_detalle' festival.id %}" class="boxed-btn">Ver más</a>
+                </div>
+            
+            </div>
+        </div>
+    </div>
      
     {% endfor %}
 </div>
