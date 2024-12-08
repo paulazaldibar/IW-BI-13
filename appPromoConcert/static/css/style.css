@@ -7421,11 +7421,11 @@ h6 {
 /*Links de entidades (sin diseño de boton)*/
 .custom-link {
   text-decoration: none; /* Quita el subrayado por defecto */
-  color: pink;  /* Color inicial del enlace */
+  color: pink !important;  /* Color inicial del enlace */
   transition: color 0.3s ease; /* Transición suave para el cambio de color */
 }
 
 .custom-link:hover {
-  color: hotpink; /* Color al pasar el cursor */
+  color: hotpink !important; /* Color al pasar el cursor */
   text-decoration: underline; /* Opcional: añade subrayado al pasar el cursor */
 }
