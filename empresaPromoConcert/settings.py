@@ -84,19 +84,19 @@ DATABASES = {#hacer otro settings para local (poner el url explicitamente)
     #'default': dj_database_url.config(default=os.getenv('DATABASE_URL','postgresql://promo_concert_user:9ygi8chccaU1VcKa4I4astT4fwlvweW5@dpg-ct67gvqlqhvc73afj890-a.frankfurt-postgres.render.com/promo_concert'))
     #'default': dj_database_url.config(default='postgresql://promo_concert_user:9ygi8chccaU1VcKa4I4astT4fwlvweW5@dpg-ct67gvqlqhvc73afj890-a.frankfurt-postgres.render.com/promo_concert')
 
-    #'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-    #}
-
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'promo_concert',
-        'USER': 'promo_concert_user',
-        'PASSWORD': '9ygi8chccaU1VcKa4I4astT4fwlvweW5',
-        'HOST': 'dpg-ct67gvqlqhvc73afj890-a.frankfurt-postgres.render.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+
+    #'default': {
+    #    'ENGINE': 'django.db.backends.postgresql',
+    #    'NAME': 'promo_concert',
+    #    'USER': 'promo_concert_user',
+    #    'PASSWORD': '9ygi8chccaU1VcKa4I4astT4fwlvweW5',
+    #    'HOST': 'dpg-ct67gvqlqhvc73afj890-a.frankfurt-postgres.render.com',
+    #    'PORT': '5432',
+    #}
 }
 
 
@@ -136,8 +136,8 @@ USE_TZ = True
 
 # Añadido: Idiomas soportados
 LANGUAGES = [
-    ('en', 'English'),
     ('es', 'Español'),
+    ('en', 'English'),
 ]
 
 # Añadido: Ruta para los archivos de traducción
