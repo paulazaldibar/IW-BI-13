@@ -43,12 +43,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'appPromoConcert',
+    'colorfield',
+    'admin_interface'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
+   # 'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -84,19 +86,19 @@ DATABASES = {#hacer otro settings para local (poner el url explicitamente)
     #'default': dj_database_url.config(default=os.getenv('DATABASE_URL','postgresql://promo_concert_user:9ygi8chccaU1VcKa4I4astT4fwlvweW5@dpg-ct67gvqlqhvc73afj890-a.frankfurt-postgres.render.com/promo_concert'))
     #'default': dj_database_url.config(default='postgresql://promo_concert_user:9ygi8chccaU1VcKa4I4astT4fwlvweW5@dpg-ct67gvqlqhvc73afj890-a.frankfurt-postgres.render.com/promo_concert')
 
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-
     #'default': {
-    #    'ENGINE': 'django.db.backends.postgresql',
-    #    'NAME': 'promo_concert',
-    #    'USER': 'promo_concert_user',
-    #    'PASSWORD': '9ygi8chccaU1VcKa4I4astT4fwlvweW5',
-    #    'HOST': 'dpg-ct67gvqlqhvc73afj890-a.frankfurt-postgres.render.com',
-    #    'PORT': '5432',
+    #    'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': BASE_DIR / 'db.sqlite3',
     #}
+
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'promo_concert',
+        'USER': 'promo_concert_user',
+        'PASSWORD': '9ygi8chccaU1VcKa4I4astT4fwlvweW5',
+        'HOST': 'dpg-ct67gvqlqhvc73afj890-a.frankfurt-postgres.render.com',
+        'PORT': '5432',
+    }
 }
 
 
@@ -135,15 +137,15 @@ USE_L10N = True
 USE_TZ = True
 
 # Añadido: Idiomas soportados
-LANGUAGES = [
-    ('es', 'Español'),
-    ('en', 'English'),
-]
+#LANGUAGES = [
+#    ('es', 'Español'),
+#    ('en', 'English'),
+#]
 
 # Añadido: Ruta para los archivos de traducción
-LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'locale')  # Carpeta donde estarán los archivos de traducción
-]
+#LOCALE_PATHS = [
+#    os.path.join(BASE_DIR, 'locale')  # Carpeta donde estarán los archivos de traducción
+#]
 
 
 
